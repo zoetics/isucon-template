@@ -1,0 +1,16 @@
+[Unit]
+Description = isucon qualifier webapp in go
+
+[Service]
+WorkingDirectory=/home/isucon/isucon-template/app/webapp/go
+EnvironmentFile=/home/isucon/isucon-template/app/webapp/env.sh
+
+ExecStart = /home/isucon/isucon-template/app/webapp/go/server
+
+Restart   = always
+Type      = simple
+User      = isucon
+Group     = isucon
+
+[Install]
+WantedBy = multi-user.target
