@@ -1,0 +1,25 @@
+version: '3'
+services:
+  nginx:
+    build: ./services/nginx
+    volumes:
+      - ./services/nginx/public:/usr/share/nginx/html/public
+    ports:
+      - "80:80"
+      - "443:443"
+
+  go:
+    build:
+      context: ./services/go
+      args:
+        GO_WORKDIR: ${GO_WORKDIR}
+    volumes:
+      - ./services/go/app:/go/src
+
+  mysql:
+    image: mysql:8
+    env_file:
+      - .env
+
+  redis:
+    image: redis:5-alpine
