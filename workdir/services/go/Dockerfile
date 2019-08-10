@@ -8,4 +8,5 @@ WORKDIR ${GO_WORKDIR}
 COPY ./app /go/src
 RUN sh build.sh
 
-CMD ./golang-webapp
+# FIXME: ビルドファイルで起動できるようにする
+CMD ["go", "run", "app.go"]
