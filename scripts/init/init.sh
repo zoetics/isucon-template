@@ -5,7 +5,7 @@ chsh -s /bin/bash
 sudo chsh -s /bin/bash
 
 # 必須なやつ
-sudo apt install -y vim git htop
+sudo apt install -y vim git
 
 # デフォルトのエディタをvimに変更
 sudo update-alternatives --set editor /usr/bin/vim.basic
