@@ -8,4 +8,4 @@ cd ${BASE_DIR}; git pull;
 
 ### daemon reload ###
 sudo rm -f /tmp/mysql-slow.sql
-sudo systemctl restart mysql
+sudo systemctl daemon-reload && sudo systemctl restart mysql
