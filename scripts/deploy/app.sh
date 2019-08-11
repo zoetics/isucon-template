@@ -10,4 +10,4 @@ cd ${BASE_DIR}; git pull;
 cd ${BASE_DIR}/go; sh build.sh;
 
 ### daemon reload ###
-sudo systemctl restart isucon.go.service;
+sudo systemctl daemon-reload && sudo systemctl restart isucon.go.service;
