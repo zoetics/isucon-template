@@ -1,10 +1,10 @@
 #!/bin/bash -eu
 
-# yum install -y zip curl git
+# install kataribe
+cd /tmp && curl -L -O https://github.com/matsuu/kataribe/releases/download/v0.3.3/linux_amd64.zip && unzip linux_amd64.zip
 
-# kataribe
-curl -L -O https://github.com/matsuu/kataribe/releases/download/v0.3.3/linux_amd64.zip
-unzip linux_amd64.zip
+# htop: サーバの負荷をCUIで見るやつ, dstat: 各種リソースのステータスを見るやつ, graphviz: pprofのWeb GUIに必要なやつ
+apt install -y htop dstat graphviz
 
-# dstat
-yum install -y dstat
+# pprofのWeb GUIに必要なやつ
+go get -u github.com/google/pprof
