@@ -13,6 +13,8 @@ services:
       context: ./services/go
       args:
         GO_WORKDIR: ${GO_WORKDIR}
+    env_file:
+      - .env
     volumes:
       - ./services/go/app:/go/src
     ports:
@@ -22,6 +24,8 @@ services:
     image: mysql:8
     env_file:
       - .env
+    ports:
+      - "3306:3306"
 
   redis:
     image: redis:5-alpine
