@@ -4,7 +4,7 @@
 # 使い方) ./conf_backup.sh /etc/nginx/nginx.conf
 
 # 設定ファイルの置き場所（scriptsの上に実際のパスごとコピーする /etc/nginx/nginx.conf -> ./etc/nginx/nginx.conf）
-PARENT_DIR=$(cd $(dirname $0);cd ..;pwd)
+PARENT_DIR=$(cd $(dirname $0);cd ../..;pwd)
 ## デバッグ用出力
 #echo "#######"
 #echo "#debug#"
