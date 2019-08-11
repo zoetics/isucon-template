@@ -1,33 +1,12 @@
 #!/bin/bash -eu
 
-BASE_DIR=/home/isucon/isucon-template
+## 並列でデプロイする
 
 # server1
-ssh 192.168.1.1 <<EOC
-sudo systemctl stop mariadb
-sudo rm -f /var/log/mariadb/mariadb.log
-sudo rm -f /var/lib/mysql/slow.log
-sudo systemctl start mariadb
-EOC
-
+cat deploy/app.sh | ssh isucon-server1 &
 # server2
-ssh 192.168.1.2 <<EOC
-sudo su - isucon;
-cd ${BASE_DIR}; git pull;
-rm -f ${BASE_DIR}/webapp/go/server;
-make -C ${BASE_DIR}/webapp/go;
-sudo systemctl restart isucon.oysters.service;
-sudo rm -f /var/log/nginx/access.log /var/log/nginx/error.log
-sudo systemctl restart nginx
-EOC
-
+cat deploy/web.sh | ssh isucon-server2 &
 # server3
-ssh 192.168.1.3 <<EOC
-sudo su - isucon;
-cd ${BASE_DIR}; git pull;
-rm -f ${BASE_DIR}/webapp/go/server;
-make -C ${BASE_DIR}/webapp/go;
-sudo systemctl restart isucon.oysters.service;
-sudo rm -f /var/log/nginx/access.log /var/log/nginx/error.log
-sudo systemctl restart nginx
-EOC
+cat deploy/database.sh | ssh isucon-server3 &
+
+wait
