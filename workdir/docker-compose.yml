@@ -15,6 +15,8 @@ services:
         GO_WORKDIR: ${GO_WORKDIR}
     volumes:
       - ./services/go/app:/go/src
+    ports:
+      - "6060:6060"
 
   mysql:
     image: mysql:8
