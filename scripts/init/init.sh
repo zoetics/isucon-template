@@ -13,14 +13,14 @@ sudo apt install -y vim git
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
 # ユーザ追加
-. ${SCRIPT_DIR}/users/add_users.sh
+. ${SCRIPT_DIR}/add_users.sh
 
 # dotfiles
-mkdir ~/bin/;
+mkdir -p ~/bin/;
 cd ~/bin/; wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash & \
 wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh & wait; cd ~;
 cp ${SCRIPT_DIR}/dotfiles/.??* ~/
-. ~/.bashrc
+echo ". ~/.bashrc"
 
 # MySQLのバックアップを取得
 #mysqldump -uroot --all-databases > /tmp/mysql.dump
