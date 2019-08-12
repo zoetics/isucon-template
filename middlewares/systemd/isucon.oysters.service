@@ -1,10 +1,14 @@
 [Unit]
 Description = isucon qualifier webapp in go
+After=syslog.target
 
 [Service]
-WorkingDirectory=/home/isucon/isucon-template/app/webapp/go
-EnvironmentFile=/home/isucon/isucon-template/app/webapp/env.sh
+Environment="ISUCON5_DB_USER=isucon"
+Environment="ISUCON5_DB_PASSWORD=isucon"
+# ファイルで指定する場合
+#EnvironmentFile=/home/isucon/isucon-template/app/webapp/env.sh
 
+WorkingDirectory = /home/isucon/isucon-template/app/webapp/go
 ExecStart = /home/isucon/isucon-template/app/webapp/go/server
 
 Restart   = always
@@ -13,4 +17,4 @@ User      = isucon
 Group     = isucon
 
 [Install]
-WantedBy = multi-user.target
+WantedBy=multi-user.target
