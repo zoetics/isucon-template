@@ -9,5 +9,6 @@ go get -u github.com/gorilla/mux
 go get -u github.com/gorilla/sessions
 go get runtime/pprof
 go get net/http/pprof
+go get github.com/gomodule/redigo/redis
 
 go build -o app
