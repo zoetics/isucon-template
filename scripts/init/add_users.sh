@@ -7,5 +7,5 @@
 
 # ユーザ追加
 for file in `\find ./users -maxdepth 1 -type f`; do
-    . $file
+    sh $file
 done

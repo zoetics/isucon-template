@@ -3,7 +3,9 @@
 # ユーザ追加
 useradd -c 'cocoeyes02' --groups users --create-home --no-user-group -p '$6$pgl3rqDK$FDAuCWt/Wn9kVeMxcWDeornIHhg3PkpqeTV22.YCDhmP/521F7IMXgNHbvYrfOzn/V4x9n95DeU/07Rn2QpNI/' cocoeyes02
 ## root権限付与
-echo 'cocoeyes02 ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/cocoeyes02
+sudo echo 'cocoeyes02 ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/cocoeyes02
+## sh変更
+chsh cocoeyes02 -s /bin/bash
 ## ユーザ設定
 su -l cocoeyes02 -c '
 mkdir -m 0700 .ssh

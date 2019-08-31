@@ -3,7 +3,9 @@
 # ユーザ追加
 useradd -c 'zoe' --groups users --create-home --no-user-group -p '$6$pgl3rqDK$FDAuCWt/Wn9kVeMxcWDeornIHhg3PkpqeTV22.YCDhmP/521F7IMXgNHbvYrfOzn/V4x9n95DeU/07Rn2QpNI/' zoe
 ## root権限付与
-echo 'zoe ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/zoe
+sudo echo 'zoe ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/zoe
+## sh変更
+chsh zoe -s /bin/bash
 ## ユーザ設定
 su -l zoe -c '
 mkdir -m 0700 .ssh
