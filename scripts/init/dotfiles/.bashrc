@@ -4,7 +4,7 @@ export LESSCHARSET=utf-8
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 # ctrl+s で出力がロックされてしまうのを防ぐ
@@ -16,10 +16,10 @@ HISTTIMEFORMAT='[%Y-%m-%d %T] '
 # linux
 # bash_completion
 if [ -f /etc/profile.d/bash_completion.sh ]; then
-  source /etc/profile.d/bash_completion.sh
+    source /etc/profile.d/bash_completion.sh
 fi
 if [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion
+    source /etc/bash_completion
 fi
 
 alias ls='ls -CF'
@@ -37,9 +37,9 @@ alias fig=docker-compose
 # screen
 export SCREENDIR=~/.screens
 alias sc=screen
-alias scx='sc -x'
+alias scx='sc -U -x'
 alias scr='sc -R'
-alias scs='sc -S'
+alias scs='sc -U -S'
 alias scl='sc -list'
 alias scw='sc -wipe'
 # tmux

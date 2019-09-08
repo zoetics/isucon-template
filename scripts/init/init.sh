@@ -7,13 +7,13 @@ chsh -s /bin/bash
 sudo chsh -s /bin/bash
 
 # 必須なやつ
-sudo apt install -y vim git unzip
+sudo apt install -y vim git unzip screen
 
 # デフォルトのエディタをvimに変更
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
 # ユーザ追加
-sh ${SCRIPT_DIR}/add_users.sh
+sudo sh ${SCRIPT_DIR}/add_users.sh
 
 # dotfiles
 mkdir -p ~/bin/;
