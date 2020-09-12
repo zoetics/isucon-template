@@ -8,3 +8,6 @@ sudo apt install -y htop dstat graphviz
 
 # pprofのWeb GUIに必要なやつ
 go get -u github.com/google/pprof
+
+# netdata
+bash <(curl -Ss https://my-netdata.io/kickstart.sh)
