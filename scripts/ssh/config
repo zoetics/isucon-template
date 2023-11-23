@@ -1,0 +1,15 @@
+Host isucon-20231125-app-1
+  HostName {ip}
+  User ubuntu
+Host isucon-20231125-app-2
+  HostName {ip}
+  User ubuntu
+Host isucon-20231125-app-3
+  HostName {ip}
+  User ubuntu
+Host isucon-20231125-app-4
+  HostName {ip}
+  User ubuntu
+Host isucon-20231125-app-5
+  HostName {ip}
+  User ubuntu

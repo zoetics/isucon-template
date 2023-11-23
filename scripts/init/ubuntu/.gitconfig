@@ -1,0 +1,35 @@
+[user]
+	name = isucon-dummy
+	email = isucon-dummy@gmail.com
+[color]
+	ui = true
+[alias]
+	s  = switch
+	st = status
+	cb = checkout -b
+	co = commit
+	br = branch
+	dc = diff --cached
+	pl = pull --prune
+	ph = push origin HEAD
+	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+	# http://qiita.com/hajimeni/items/73d2155fc59e152630c4
+	clean-local = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master'|xargs git branch -d; };f"
+	clean-remote = remote prune origin
+	rm-work = !git add -A && git co -m 'tmp' && git reset --hard @^
+	renew = "!f() { git fetch origin $1 && git reset --hard origin/$1; }; f"
+[push]
+	default = simple
+[fetch]
+    prune = true
+[pull]
+    ff = only
+[rebase]
+    autostash = true
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim -c \"set fenc=utf-8\"
+	ignorecase = false
+	quotepath = false
+[init]
+	defaultBranch = main
