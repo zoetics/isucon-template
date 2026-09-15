@@ -12,10 +12,10 @@ sudo apt install -y vim git unzip golang dstat htop graphviz
 sudo update-alternatives --set editor /usr/bin/vim.basic
 
 # MySQLのバックアップを取得
-mysqldump -uroot --all-databases > /tmp/mysql.dump
+mysqldump -uroot --all-databases > /home/isucon/mysql.dump
 
 # install kataribe
-cd /tmp && curl -L -O https://github.com/matsuu/kataribe/releases/download/v0.3.3/linux_amd64.zip && unzip linux_amd64.zip
+cd /opt && curl -L -O https://github.com/matsuu/kataribe/releases/download/v0.3.3/linux_amd64.zip && unzip linux_amd64.zip
 
 # pprofのWeb GUIに必要なやつ
 go get -u github.com/google/pprof
