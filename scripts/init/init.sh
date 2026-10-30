@@ -18,16 +18,17 @@ mysqldump -uroot --all-databases > /home/isucon/mysql.dump
 cd /opt && curl -L -O https://github.com/matsuu/kataribe/releases/download/v0.3.3/linux_amd64.zip && unzip linux_amd64.zip
 
 # pprofのWeb GUIに必要なやつ
-go get -u github.com/google/pprof
+# go get -u github.com/google/pprof
 
-# netdata
-sudo sed -i s/127\.0\.0\.1/0\.0\.0\.0/ /etc/netdata/netdata.conf
-sudo systemctl restart netdata
+# # netdata
+# sudo sed -i s/127\.0\.0\.1/0\.0\.0\.0/ /etc/netdata/netdata.conf
+# sudo systemctl restart netdata
 
 # dotfiles
-sudo cp ~/.gitconfig /home/isucon/.gitconfig
-sudo cp ~/.bash_profile /home/isucon/.bash_profile
+sudo cp ~/ubuntu/.gitconfig /home/isucon/.gitconfig
+sudo cp ~/ubuntu/.bash_profile /home/isucon/.bash_profile
+sudo cp ~/ubuntu/kataribe.toml /opt/kataribe.toml
 sudo mkdir -p -m 700 /home/isucon/.ssh
 sudo chown isucon:isucon /home/isucon/.ssh
-sudo cp ~/.ssh/id_rsa /home/isucon/.ssh/id_rsa
+# sudo cp ~/ubuntu/.ssh/id_rsa /home/isucon/.ssh/id_rsa
 sudo chown isucon:isucon /home/isucon/.gitconfig /home/isucon/.bash_profile /home/isucon/.ssh/id_rsa
